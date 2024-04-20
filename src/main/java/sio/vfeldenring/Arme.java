@@ -8,8 +8,9 @@ public class Arme {
     private int puissance ;
     private Sort s1;
     private Sort s2;
+    private boolean dispo;
 
-    public Arme(String nom, String description, String icon, String imgEntier, int puissance, Sort s1, Sort s2) {
+    public Arme(String nom, String description, String icon, String imgEntier, int puissance, Sort s1, Sort s2, boolean dispo) {
         this.nom = nom;
         Description = description;
         this.icon = icon;
@@ -17,6 +18,15 @@ public class Arme {
         this.puissance = puissance;
         this.s1 = s1;
         this.s2 = s2;
+        this.dispo = dispo;
+    }
+
+    public boolean isDispo() {
+        return dispo;
+    }
+
+    public void setDispo(boolean dispo) {
+        this.dispo = dispo;
     }
 
     public String getNom() {
