@@ -72,6 +72,10 @@ public class Boss {
         return pvMax;
     }
 
+    public void fullPv(){
+        this.pv = (int) this.pvMax;
+    }
+
     public boolean testMort(){
         if (this.pv<=0){
             return true;
@@ -79,9 +83,16 @@ public class Boss {
         return false;
     }
     public void randomAttaque(Classe c){
-        c.setPv(c.getPv()-alea());
+        int degat = this.force;
+        if(touche()){
+            c.setPv(c.getPv()-degat);
+        }
+        System.out.println("degat infligé par l'enemy : " + Integer.toString(degat));
     }
 
+    public boolean touche(){
+        return alea()<=90;
+    }
     public int alea() { return (int)(Math.random() * this.force ); } // 0 to la force du boss
 
 }

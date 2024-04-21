@@ -17,9 +17,11 @@ public class Classe {
     private int chance;
     private int vitesse;
     private Arme main;
+    private ArrayList<Sort> sortsN;
+    private ArrayList<Sort> sortsS;
     private int nbSoin;
 
-    public Classe(String nom, String imgPerso,ArrayList<Arme> armes, int pv,int pvMax, int defense, int force, int chance, int vitesse, Arme main, ArrayList<Sort> sortsDispo, int nbSoin) {
+    public Classe(String nom, String imgPerso,ArrayList<Arme> armes,ArrayList<Sort> sorts, ArrayList<Sort> sortsS, int pv,int pvMax, int defense, int force, int chance, int vitesse, Arme main, int nbSoin) {
         this.nom = nom;
         this.pv = pv;
         this.defense = defense;
@@ -27,11 +29,20 @@ public class Classe {
         this.chance = chance;
         this.vitesse = vitesse;
         this.armes = armes;
+        this.sortsN = sorts;
+        this.sortsS = sortsS;
         this.main = main;
-        this.sortsDispo = sortsDispo;
         this.imgPerso = imgPerso;
         this.nbSoin=nbSoin;
         this.pvMax = pvMax;
+    }
+
+    public ArrayList<Sort> getSortsN() {
+        return sortsN;
+    }
+
+    public ArrayList<Sort> getSortsS() {
+        return sortsS;
     }
 
     public int getNbSoin() {

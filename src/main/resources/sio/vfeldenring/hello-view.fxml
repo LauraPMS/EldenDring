@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.effect.BoxBlur?>
@@ -144,12 +145,12 @@
                   <Image url="@../../images/Background/Map/site_grace.gif" />
                </image>
             </ImageView>
-            <ImageView fx:id="siteRenalla" fitHeight="53.0" fitWidth="49.0" layoutX="417.0" layoutY="162.0" onMouseClicked="#lanceMorgot" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="siteMorgot" fitHeight="53.0" fitWidth="49.0" layoutX="417.0" layoutY="162.0" onMouseClicked="#lanceMorgot" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/Map/site_grace.gif" />
                </image>
             </ImageView>
-            <ImageView fx:id="siteMorgot" fitHeight="53.0" fitWidth="49.0" layoutX="327.0" layoutY="227.0" onMouseClicked="#lanceRenalla" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="siteRenalla" fitHeight="53.0" fitWidth="49.0" layoutX="327.0" layoutY="227.0" onMouseClicked="#lanceRenalla" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/Map/site_grace.gif" />
                </image>
@@ -183,28 +184,28 @@
                   <Image url="@../../images/Background/Bastion/prout.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="155.0" fitWidth="245.0" layoutX="22.0" layoutY="366.0" onMouseClicked="#changeApMiriel" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="237.0" fitWidth="338.0" layoutX="22.0" layoutY="284.0" onMouseClicked="#changeApMiriel" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/Background/Bastion/miriel-removebg-preview.png" />
+                  <Image url="@../../images/Boss/goofy_miriel.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="672.0" layoutY="279.0" onMouseClicked="#changeApEnia" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/Background/Bastion/enia-removebg-preview.png" />
+                  <Image url="@../../images/Boss/goofy_alexander.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="263.0" fitWidth="200.0" layoutX="417.0" layoutY="103.0" onMouseClicked="#changeApInventaire" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="640.0" layoutY="457.0" text="Enia ~ Restauration de souvenirs" textFill="WHITE">
+            <Label layoutX="640.0" layoutY="457.0" style="-fx-text-fill: white;" text="Alexander ~ Gardien des cartes" textFill="WHITE">
                <font>
                   <Font name="Century Gothic" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="511.0" text="Miriel ~ Changement de Sort" textFill="WHITE">
+            <Label layoutX="22.0" layoutY="511.0" style="-fx-text-fill: white;" text="Miriel ~ Changement de Sort" textFill="WHITE">
                <font>
                   <Font name="Century Gothic" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="471.0" layoutY="55.0" text="Inventaire" textFill="WHITE">
+            <Label layoutX="461.0" layoutY="49.0" style="-fx-text-fill: white;" text="Inventaire" textFill="WHITE">
                <font>
                   <Font name="Century Gothic" size="19.0" />
                </font>
@@ -213,7 +214,7 @@
       </AnchorPane>
       <AnchorPane fx:id="apMiriel" prefHeight="556.0" prefWidth="989.0" visible="false">
          <children>
-            <ImageView fitHeight="609.0" fitWidth="994.0" layoutX="-4.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="609.0" fitWidth="994.0" layoutX="-2.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/Bastion/bastionMiriel.png" />
                </image>
@@ -223,66 +224,196 @@
                   <BoxBlur height="0.0" iterations="2" width="78.88" />
                </effect>
             </Pane>
-            <ImageView fitHeight="68.0" fitWidth="73.0" layoutX="605.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="540.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/itemVide.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="73.0" layoutX="526.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgArme" fitHeight="139.0" fitWidth="122.0" layoutX="651.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Arme/loup/guts.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="463.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/itemVide.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="73.0" layoutX="605.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="540.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/itemVide.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="73.0" layoutX="526.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="463.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/itemVide.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="73.0" layoutX="605.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="540.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/itemVide.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="73.0" layoutX="526.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="463.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/itemVide.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgArme" fitHeight="150.0" fitWidth="200.0" layoutX="699.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="sortArme1" fitHeight="74.0" fitWidth="71.0" layoutX="693.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="sortArme2" fitHeight="74.0" fitWidth="71.0" layoutX="779.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="sortArme1" fitHeight="74.0" fitWidth="71.0" layoutX="627.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Sort/goldenProut.png" />
+               </image></ImageView>
+            <ImageView fx:id="sortArme2" fitHeight="74.0" fitWidth="71.0" layoutX="712.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Sort/lameFeu.png" />
+               </image></ImageView>
             <ImageView fitHeight="68.0" fitWidth="71.0" layoutX="14.0" layoutY="8.0" onMouseClicked="#changeApBastion" pickOnBounds="true" preserveRatio="true" rotate="-178.5">
                <image>
                   <Image url="@../../images/Background/goldenArrow-removebg-preview.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="327.0" fitWidth="376.0" layoutX="32.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Boss/goofy_miriel.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="874.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Background/itemVide.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="797.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Background/itemVide.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="874.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Background/itemVide.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="797.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Background/itemVide.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="874.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Background/itemVide.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="68.0" fitWidth="73.0" layoutX="797.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Background/itemVide.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="488.0" layoutY="393.0" mnemonicParsing="false" onMouseClicked="#changerSort1" text="ChangerS1" />
+            <Button layoutX="834.0" layoutY="393.0" mnemonicParsing="false" onMouseClicked="#changerSort2" text="ChangerS2" />
+            <ImageView fx:id="iconEffetS1" fitHeight="37.0" fitWidth="38.0" layoutX="614.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Stat/folie.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="iconEffetS2" fitHeight="37.0" fitWidth="38.0" layoutX="698.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Stat/blood.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblPuissanceSort1" layoutX="651.0" layoutY="343.0" style="-fx-text-fill: white;" text="30" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Label fx:id="lblPuissanceSort2" layoutX="736.0" layoutY="343.0" style="-fx-text-fill: white;" text="30" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="463.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="539.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortNormal1" fitHeight="68.0" fitWidth="66.0" layoutX="463.0" layoutY="159.0" onMouseClicked="#selectionSort1emp1" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortNormal2" fitHeight="68.0" fitWidth="66.0" layoutX="539.0" layoutY="160.0" onMouseClicked="#selectionSort1emp2" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortNormal3" fitHeight="68.0" fitWidth="66.0" layoutX="462.0" layoutY="235.0" onMouseClicked="#selectionSort1emp3" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortNormal4" fitHeight="68.0" fitWidth="66.0" layoutX="539.0" layoutY="235.0" onMouseClicked="#selectionSort1emp4" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortNormal5" fitHeight="68.0" fitWidth="66.0" layoutX="458.0" layoutY="312.0" onMouseClicked="#selectionSort1emp5" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortNormal6" fitHeight="68.0" fitWidth="66.0" layoutX="535.0" layoutY="312.0" onMouseClicked="#selectionSort1emp6" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortSpecial1" fitHeight="68.0" fitWidth="66.0" layoutX="793.0" layoutY="159.0" onMouseClicked="#selectionSort2emp1" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortSpecial2" fitHeight="68.0" fitWidth="66.0" layoutX="869.0" layoutY="160.0" onMouseClicked="#selectionSort2emp2" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortSpecial3" fitHeight="68.0" fitWidth="66.0" layoutX="792.0" layoutY="235.0" onMouseClicked="#selectionSort2emp3" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortSpecial4" fitHeight="68.0" fitWidth="66.0" layoutX="869.0" layoutY="235.0" onMouseClicked="#selectionSort2emp4" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortSpecial5" fitHeight="68.0" fitWidth="66.0" layoutX="796.0" layoutY="312.0" onMouseClicked="#selectionSort2emp5" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="empSortSpecial6" fitHeight="68.0" fitWidth="66.0" layoutX="873.0" layoutY="312.0" onMouseClicked="#selectionSort2emp6" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lblMirielNomS1" layoutX="646.0" layoutY="312.0" style="-fx-text-fill: white;" text="Prout" />
+            <Label fx:id="lblMirielNomS2" layoutX="720.0" layoutY="312.0" style="-fx-text-fill: white;" text="LameFeu" />
+            <ImageView fx:id="selectionSort1" fitHeight="86.0" fitWidth="82.0" layoutX="494.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Sort/noSkill.png" />
+               </image></ImageView>
+            <ImageView fx:id="selectionSort2" fitHeight="86.0" fitWidth="82.0" layoutX="828.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Sort/noSkill.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="apEnia" prefHeight="556.0" prefWidth="990.0" visible="false">
+      <AnchorPane fx:id="apEnia" prefHeight="556.0" prefWidth="990.0">
          <children>
             <ImageView fitHeight="598.0" fitWidth="989.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/Bastion/bastionEnia.png" />
                </image>
             </ImageView>
-            <Pane disable="true" layoutX="14.0" opacity="0.71" prefHeight="555.0" prefWidth="548.0" style="-fx-background-color: #4e412e;">
-               <effect>
-                  <BoxBlur height="0.0" iterations="2" width="78.88" />
-               </effect>
-            </Pane>
             <ImageView fitHeight="86.0" fitWidth="80.0" layoutX="896.0" layoutY="14.0" onMouseClicked="#changeApBastion" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/goldenArrow-removebg-preview.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="278.0" fitWidth="271.0" layoutX="687.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Boss/goofy_alexander.png" />
+               </image>
+            </ImageView>
+            <Pane disable="true" layoutX="14.0" opacity="0.71" prefHeight="555.0" prefWidth="548.0" style="-fx-background-color: #4e412e;" visible="false">
+               <effect>
+                  <BoxBlur height="0.0" iterations="2" width="78.88" />
+               </effect>
+            </Pane>
+            <ImageView fitHeight="237.0" fitWidth="248.0" layoutX="37.0" layoutY="286.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Animation/coffre-unscreen.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCarteFond" fitHeight="525.0" fitWidth="394.0" layoutX="230.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Fond/legendaire.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="340.0" fitWidth="271.0" layoutX="294.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Animation/sayan.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCarteObjet" fitHeight="294.0" fitWidth="182.0" layoutX="336.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Joueur/wretch.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCarteEffet" fitHeight="37.0" fitWidth="49.0" layoutX="336.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Stat/blood.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="gifAnimationFille" fitHeight="196.0" fitWidth="200.0" layoutX="207.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Animation/wewe.gif" />
+               </image></ImageView>
+            <ImageView fx:id="gifFeuArtifice" fitHeight="244.0" fitWidth="248.0" layoutX="406.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Animation/paw.gif" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="apCombat" prefHeight="503.0" prefWidth="988.0" scaleShape="false">
+      <AnchorPane fx:id="apCombat" prefHeight="503.0" prefWidth="988.0" scaleShape="false" visible="false">
          <children>
             <ImageView fx:id="imgArene" fitHeight="578.0" fitWidth="1003.0" layoutX="-4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                <image>
