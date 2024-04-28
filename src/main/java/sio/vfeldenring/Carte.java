@@ -21,7 +21,11 @@ public class Carte {
         this.disponible = disponible;
     }
 
-    public Carte(String type, String nom, String img, String fond, String animation, int rarete, boolean disponible) {
+    public Carte(String type, String nom,
+                 String img, String fond,
+                 String animation,
+                 int rarete,
+                 boolean disponible) {
         this.nom = nom;
         this.type = type;
         this.img = img;

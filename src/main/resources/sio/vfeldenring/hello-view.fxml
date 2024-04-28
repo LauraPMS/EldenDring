@@ -9,6 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.vfeldenring.HelloController">
@@ -377,17 +378,13 @@
                   <BoxBlur height="0.0" iterations="2" width="78.88" />
                </effect>
             </Pane>
-            <ImageView fitHeight="237.0" fitWidth="248.0" layoutX="37.0" layoutY="286.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/Carte/Animation/coffre-unscreen.gif" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="gifCoffre" fitHeight="237.0" fitWidth="248.0" layoutX="37.0" layoutY="286.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#lanceTirage" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="imgCarteFond" fitHeight="525.0" fitWidth="394.0" layoutX="230.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Carte/Fond/legendaire.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="340.0" fitWidth="271.0" layoutX="294.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="340.0" fitWidth="271.0" layoutX="294.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../images/Carte/Animation/sayan.gif" />
                </image>
@@ -402,15 +399,26 @@
                   <Image url="@../../images/Carte/Stat/blood.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="gifAnimationFille" fitHeight="196.0" fitWidth="200.0" layoutX="207.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="gifAnimationFille" fitHeight="196.0" fitWidth="200.0" layoutX="207.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../images/Carte/Animation/wewe.gif" />
                </image></ImageView>
-            <ImageView fx:id="gifFeuArtifice" fitHeight="244.0" fitWidth="248.0" layoutX="406.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="gifFeuArtifice" fitHeight="244.0" fitWidth="248.0" layoutX="406.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../../images/Carte/Animation/paw.gif" />
                </image>
             </ImageView>
+            <ImageView fitHeight="105.0" fitWidth="122.0" layoutX="844.0" layoutY="118.0" onMouseClicked="#changeApCollection" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/livre.png" />
+               </image>
+            </ImageView>
+            <Circle fx:id="notifNvCarte" fill="#df0202" layoutX="936.0" layoutY="132.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label layoutX="927.0" layoutY="120.0" prefHeight="24.0" prefWidth="17.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="15" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="apCombat" prefHeight="503.0" prefWidth="988.0" scaleShape="false" visible="false">
@@ -496,6 +504,133 @@
             <ImageView fx:id="imgPerdu" fitHeight="213.0" fitWidth="1001.0" layoutX="-3.0" layoutY="235.0" onMouseClicked="#retourMap" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Background/tMort.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="apCollection" prefHeight="555.0" prefWidth="991.0" style="-fx-background-color: #5E4F38;" visible="false">
+         <children>
+            <Pane layoutX="27.0" layoutY="108.0" prefHeight="435.0" prefWidth="940.0" style="-fx-background-color: #968468;">
+               <children>
+                  <ImageView fitHeight="211.0" fitWidth="167.0" layoutX="17.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/legendaire.png" />
+                     </image></ImageView>
+                  <ImageView fitHeight="167.0" fitWidth="167.0" layoutX="199.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/legendaire.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="cartePersonnage3" fitHeight="167.0" fitWidth="194.0" layoutX="389.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/sombre.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="cartePersonnage4" fitHeight="167.0" fitWidth="174.0" layoutX="560.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/sombre.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="cartePersonnage5" fitHeight="167.0" fitWidth="174.0" layoutX="750.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/sombre.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="cartePersonnage6" fitHeight="211.0" fitWidth="167.0" layoutX="8.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/manuscrit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="cartePersonnage7" fitHeight="167.0" fitWidth="167.0" layoutX="190.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/manuscrit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="cartePersonnage8" fitHeight="167.0" fitWidth="194.0" layoutX="380.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/manuscrit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="cartePersonnage9" fitHeight="167.0" fitWidth="174.0" layoutX="551.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/manuscrit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="cartePersonnage10" fitHeight="167.0" fitWidth="174.0" layoutX="741.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Fond/manuscrit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteLeg1" fitHeight="132.0" fitWidth="122.0" layoutX="56.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/wretch.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteLeg2" fitHeight="132.0" fitWidth="122.0" layoutX="235.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/vagabond.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteRare1" fitHeight="132.0" fitWidth="122.0" layoutX="425.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/hero.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteRare2" fitHeight="150.0" fitWidth="105.0" layoutX="587.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/samurai.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteRare3" fitHeight="150.0" fitWidth="105.0" layoutX="781.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/confessor.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteCommune1" fitHeight="150.0" fitWidth="105.0" layoutX="39.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/bandit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteCommune3" fitHeight="150.0" fitWidth="105.0" layoutX="411.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/prisonner.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteCommune2" fitHeight="150.0" fitWidth="105.0" layoutX="221.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/astrolog.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteCommune4" fitHeight="150.0" fitWidth="105.0" layoutX="582.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/warrior.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="carteCommune5" fitHeight="150.0" fitWidth="105.0" layoutX="772.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Carte/Joueur/prophet.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+            <ImageView fitHeight="86.0" fitWidth="92.0" layoutX="51.0" layoutY="14.0" onMouseClicked="#changeCollectionToPersonnage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Icon/ER_Custom_Menu_Icon_Origins.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="111.0" layoutX="143.0" layoutY="14.0" onMouseClicked="#changeCollectionToBestiaire" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Icon/ER_Custom_Menu_Icon_Boss.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="113.0" layoutX="234.0" layoutY="14.0" onMouseClicked="#changeCollectionToPaysage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Icon/ER_Main_Menu_Icon_Map.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="113.0" layoutX="326.0" layoutY="14.0" onMouseClicked="#changeCollectionToPaysage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Icon/ER_Main_Menu_Icon_Item_Crafting.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="104.0" fitWidth="137.0" layoutX="887.0" layoutY="5.0" onMouseClicked="#changeApBastion" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Background/goldenArrow-removebg-preview.png" />
                </image>
             </ImageView>
          </children>

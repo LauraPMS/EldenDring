@@ -10,7 +10,10 @@ public class Arme {
     private Sort s2;
     private boolean dispo;
 
-    public Arme(String nom, String description, String icon, String imgEntier, int puissance, Sort s1, Sort s2, boolean dispo) {
+    public Arme(String nom, String description,
+                String icon, String imgEntier,
+                int puissance, Sort s1, Sort s2,
+                boolean dispo) {
         this.nom = nom;
         Description = description;
         this.icon = icon;

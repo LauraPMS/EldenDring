@@ -10,7 +10,10 @@ public class Boss {
     private int vitesse;
     private String arene;
 
-    public Boss(String nom, String imgDos, int force, int pv, int pvMax, int vitesse, String arene){
+    public Boss(String nom, String imgDos,
+                int force, int pv,
+                int pvMax, int vitesse,
+                String arene){
         this.nom = nom;
         this.imgFace = imgDos;
         this.force = force;

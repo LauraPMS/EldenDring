@@ -7,7 +7,9 @@ public class Sort {
     private int puissance;
     private int temps;
 
-    public Sort(String nom, String img, String effet, int puissance) {
+    public Sort(String nom, String img,
+                String effet,
+                int puissance) {
         this.nom = nom;
         this.img = img;
         this.effet = effet;

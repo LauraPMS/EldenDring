@@ -1,20 +1,22 @@
 package sio.vfeldenring;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class HelloController implements Initializable {
 
@@ -194,19 +196,30 @@ public class HelloController implements Initializable {
     // Samurai
     public Arme katana = new Arme("Katana", "", "Arme/ronin/katana.png", "", 15, griffe, pirouette, false);
     public Arme bloodRiver = new Arme("Blood River", "", "Arme/ronin/riverBlood.png", "", 25, lameFeu, riverBlood, false);
+    public Arme courbe = new Arme("Epee Courbé", "", "Arme/ronin/courbe.png", "", 25, doubleLame, petSacre, false);
+    public Arme magicSword = new Arme("Epee Magique", "", "Arme/ronin/magicSword.png", "", 25, doubleLame, petSacre, false);
+    public Arme katanaMalenia = new Arme("Main de Malenia", "", "Arme/ronin/malenia.png", "", 25, doubleLame, petSacre, false);
+    public Arme katanamorgot =  new Arme("Epee Courbé", "", "Arme/ronin/courbe.png", "", 25, doubleLame, petSacre, false);
+
 
     // Magie
     public Arme baguette = new Arme("Baguette", "", "Arme/mage/baguette.png", "", 10, cailloux,gravitation, false);
-    public Arme sceptre = new Arme("Sceptre Royal", "", "Arme/sceptre.png", "", 20, soleil, lune,false);
+    public Arme sceptre = new Arme("Sceptre Royal", "", "Arme/mage/sceptre.png", "", 20, soleil, lune,false);
+    public Arme codedSword = new Arme("Epee enchanté", "", "Arme/mage/codedSword.png", "", 20, soleil, lune, false);
+    public Arme death = new Arme("Scpetre du prince de la mort", "", "Arme/mage/death.png", "", 20, soleil, lune, false);
+    public Arme azurBaguette = new Arme("Baguette Azur", "", "Arme/mage/azurBaguette.png", "", 20, soleil, lune, false);
 
     // Chevalier
     public Arme epee = new Arme("Épée de Chevalier","","Arme/loup/epee.png", "", 15, cri, ombre, false);
-    public Arme grandEspadon = new Arme("Guts", "", "Arme/loup/guts.png", "", 30, griffe, doubleLame,false);
-
+    public Arme grandEspadon = new Arme("Guts", "", "Arme/loup/guts.png", "", 30, petSacre, doubleLame,false);
+    public Arme espadonRadahn = new Arme("Grands Espadon de Radahn", "", "Arme/loup/espadonRadahn.png","", 40, lune, soleil, false);
+    public Arme espadonMaliketh = new Arme("Lame d'ébene", "", "Arme/loup/maliketh.png", "", 50, lune, soleil, false);
+    public Arme hache = new Arme("Grande Hache", "", "Arme/loup/grandeHache.png", "", 30, lune, soleil, false);
+    public Arme jesus = new Arme("Lame sacré", "", "Arme/jesusSword.png", "", 70, lune, soleil, false);
     // Liste de sort et d'armes initialement vide
-    private ArrayList<Arme> armes = new ArrayList<Arme>();
-    private ArrayList<Sort> sortsN = new ArrayList<Sort>();
-    private ArrayList<Sort> sortsS = new ArrayList<Sort>();
+    public ArrayList<Arme> armes = new ArrayList<Arme>();
+    public ArrayList<Sort> sortsN = new ArrayList<Sort>();
+    public ArrayList<Sort> sortsS = new ArrayList<Sort>();
 
 
 
@@ -224,37 +237,36 @@ public class HelloController implements Initializable {
     public Boss radahn = new Boss("Général Radahn", "Boss/goofy_radahn.png", 20,200,200,3, "Background/Arene/arene_radahn.jpg");
     public Boss morgot = new Boss("Morgot le Roi Déchu","Boss/goofy_morgot.png",25,250,250,2,"Background/Arene/arene_morgot.jpg");
     public Boss maliketh = new Boss("La lame d'ébène", "Boss/maliketh.png", 35, 300,300, 2, "Background/Arene/arene_maliketh.png");
-    public Boss malenia = new Boss("Malenia", "Boss/goofy_malenia.png", 35,300,300,1,"Background/Arene/arene_malenia.jpg");
-    public Boss godfrey = new Boss("Godfrey", "Boss/goofy_godfrey.png", 50,400,400,1,"Backgroud/Arene/arene_morgot.jpg");
+    public Boss malenia = new Boss("Malenia", "Boss/goofy_malenia.png", 35,350,350,1,"Background/Arene/arene_malenia.jpg");
+    public Boss godfrey = new Boss("Godfrey", "Boss/goofy_godfrey.png", 50,400,400,1,"Background/Arene/arene_morgot.jpg");
 
 
 // Création des cartes
         // Personnage
-    public Carte astrologue = new Carte("Personnage", "Astrologue","Carte/Joueur/astrolog.png", "Carte/Fond/manuscrit.png","Animation/projecteur.gif",80, false);
-    public Carte bandit = new Carte("Personnage", "Bandit", "Carte/Joueur/bandit.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte confessor = new Carte("Personnage", "Confessor", "Carte/Joueur/confessor.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte hero = new Carte("Personnage", "Hero", "Carte/Joueur/hero.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte prisonnier = new Carte("Personnage", "Prisonnier", "Carte/Joueur/prisonner.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte prophet = new Carte("Personnage", "Prophete", "Carte/Joueur/prophet.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte samurai = new Carte("Personnage", "Samurai", "Carte/Joueur/samurai.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte vagabond = new Carte("Personnage", "Vagabond", "Carte/Joueur/vagabond.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte warrior = new Carte("Personnage", "Warrior", "Carte/Joueur/warrior.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte wretch = new Carte("Personnage", "Wretch", "Carte/Joueur/wretch.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
+    public Carte astrologue = new Carte("Personnage", "Astrologue","Carte/Joueur/astrolog.png", "Carte/Fond/manuscrit.png","Commun",10, false);
+    public Carte bandit = new Carte("Personnage", "Bandit", "Carte/Joueur/bandit.png", "Carte/Fond/manuscrit.png", "Commun", 20, false);
+    public Carte confessor = new Carte("Personnage", "Confessor", "Carte/Joueur/confessor.png", "Carte/Fond/sombre.png", "Rare", 64, false);
+    public Carte hero = new Carte("Personnage", "Hero", "Carte/Joueur/hero.png", "Carte/Fond/manuscrit.png", "Commun", 30, false);
+    public Carte prisonnier = new Carte("Personnage", "Prisonnier", "Carte/Joueur/prisonner.png", "Carte/Fond/manuscrit.png", "Commun", 40, false);
+    public Carte prophet = new Carte("Personnage", "Prophete", "Carte/Joueur/prophet.png", "Carte/Fond/manuscrit.png", "Commun", 50, false);
+    public Carte samurai = new Carte("Personnage", "Samurai", "Carte/Joueur/samurai.png", "Carte/Fond/sombre.png", "Rare", 79, false);
+    public Carte vagabond = new Carte("Personnage", "Vagabond", "Carte/Joueur/vagabond.png", "Carte/Fond/legendaire.png", "Legendaire", 88, false);
+    public Carte warrior = new Carte("Personnage", "Warrior", "Carte/Joueur/warrior.png", "Carte/Fond/sombre.png", "Rare", 66, false);
+    public Carte wretch = new Carte("Personnage", "Wretch", "Carte/Joueur/wretch.png", "Carte/Fond/legendaire.png", "Legendaire", 99, false);
 
         // Bestiaire
-    public Carte albinauric = new Carte("Bestiaire", "Albinauric", "Carte/Bestiaire/albinoric.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte ancetre = new Carte("Bestiaire", "Ancetre", "Carte/Bestiaire/ancetre.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte cauchemard = new Carte("Bestiaire", "CauchemarDs3", "Carte/Bestiaire/cauchemarDS3.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte crabe = new Carte("Bestiaire", "Crabe", "Carte/Bestiaire/crab.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte crystalBleu = new Carte("Bestiaire", "Bleu", "Carte/Bestiaire/CrystalBleu.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte lion = new Carte("Bestiaire", "Lion", "Carte/Bestiaire/lion.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte chat = new Carte("Bestiaire", "Chat", "Carte/Bestiaire/chat.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte mobHache = new Carte("Bestiaire", "Mob Hache", "Carte/Bestiaire/mobHache.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
-    public Carte mobFeu = new Carte("Bestiaire", "Mob Feu", "Carte/Bestiaire/mobFeu.png", "Carte/Fond/manuscrit.png", "Animation/projecteur.gif", 80, false);
+    public Carte albinauric = new Carte("Bestiaire", "Albinauric", "Carte/Bestiaire/albinoric.png", "Carte/Fond/legendaire.png", "Legendaire", 99, false);
+    public Carte ancetre = new Carte("Bestiaire", "Ancetre", "Carte/Bestiaire/ancetre.png", "Carte/Fond/legendaire.png", "Legendaire", 88, false);
+    public Carte cauchemard = new Carte("Bestiaire", "CauchemarDs3", "Carte/Bestiaire/cauchemarDS3.png", "Carte/Fond/sombre.png", "Rare", 79, false);
+    public Carte crabe = new Carte("Bestiaire", "Crabe", "Carte/Bestiaire/crab.png", "Carte/Fond/sombre.png", "Rare", 66, false);
+    public Carte crystalBleu = new Carte("Bestiaire", "Bleu", "Carte/Bestiaire/CrystalBleu.png", "Carte/Fond/sombre.png", "Rare", 64, false);
+    public Carte lion = new Carte("Bestiaire", "Lion", "Carte/Bestiaire/lion.png", "Carte/Fond/manuscrit.png", "Commun", 50, false);
+    public Carte chat = new Carte("Bestiaire", "Chat", "Carte/Bestiaire/chat.png", "Carte/Fond/manuscrit.png", "Commun", 40, false);
+    public Carte mobHache = new Carte("Bestiaire", "Mob Hache", "Carte/Bestiaire/mobHache.png", "Carte/Fond/manuscrit.png", "Commun", 30, false);
+    public Carte mobFeu = new Carte("Bestiaire", "Mob Feu", "Carte/Bestiaire/mobFeu.png", "Carte/Fond/manuscrit.png", "Commun", 20, false);
 
         // Sort
     //...
-    public ArrayList mesCartes = new ArrayList<>();
     @FXML
     private Label lblPuissanceSort1;
     @FXML
@@ -297,6 +309,63 @@ public class HelloController implements Initializable {
     private ImageView selectionSort1;
     @FXML
     private ImageView selectionSort2;
+    @FXML
+    private ImageView gifCoffre;
+    @FXML
+    private ImageView gifAnimationFille;
+    @FXML
+    private ImageView gifFeuArtifice;
+    @FXML
+    private ImageView carteLeg1;
+    @FXML
+    private ImageView carteLeg2;
+    @FXML
+    private ImageView imgCarteEffet;
+    @FXML
+    private ImageView cartePersonnage6;
+    @FXML
+    private ImageView cartePersonnage5;
+    @FXML
+    private ImageView cartePersonnage4;
+    @FXML
+    private ImageView cartePersonnage3;
+    @FXML
+    private ImageView cartePersonnage9;
+    @FXML
+    private ImageView cartePersonnage8;
+    @FXML
+    private ImageView cartePersonnage7;
+    @FXML
+    private ImageView carteRare1;
+    @FXML
+    private ImageView imgCarteFond;
+    @FXML
+    private ImageView imgCarteObjet;
+    @FXML
+    private Circle notifNvCarte;
+    @FXML
+    private ImageView cartePersonnage10;
+    @FXML
+    private AnchorPane apCollection;
+    public ArrayList<Carte> toutesCartes = new ArrayList<Carte>();
+    @FXML
+    private ImageView carteCommune2;
+    @FXML
+    private ImageView carteCommune1;
+    @FXML
+    private ImageView carteCommune5;
+    @FXML
+    private ImageView carteCommune4;
+    @FXML
+    private ImageView carteCommune3;
+    @FXML
+    private ImageView carteRare2;
+    @FXML
+    private ImageView carteRare3;
+
+
+    private ArrayList<Carte> cartePersonnage = new ArrayList<Carte>();
+    private ArrayList<Carte> carteBestiaire = new ArrayList<Carte>();
 
     // Fonction du debut rend tout invisible met a jour l'ap visible et rempli la liste des cartes disponible pour le tirage
     @Override
@@ -318,15 +387,15 @@ public class HelloController implements Initializable {
         imgArmeRoninInventaire.setVisible(false);
 
         changeAp(apClasse);
-
+        // Appliquer le style à la barre de progression
         // Changer la couleur de la barre de vie
         String progressBarStyle = "-fx-background-color: white; " + // Couleur de fond
                 "-fx-accent: red;";          // Couleur de la barre de progression
-        // Appliquer le style à la barre de progression
+
         pvBoss.setStyle(progressBarStyle);
         pvMoi.setStyle(progressBarStyle);
 
-        ArrayList<Carte> toutesCartes = new ArrayList<Carte>();
+        // Rempli la liste carte de toutes les cartes existantes
         toutesCartes.add(astrologue);
         toutesCartes.add(bandit);
         toutesCartes.add(confessor);
@@ -346,6 +415,31 @@ public class HelloController implements Initializable {
         toutesCartes.add(lion);
         toutesCartes.add(mobFeu);
         toutesCartes.add(mobHache);
+
+        cartePersonnage.add(astrologue);
+        cartePersonnage.add(bandit);
+        cartePersonnage.add(confessor);
+        cartePersonnage.add(hero);
+        cartePersonnage.add(prisonnier);
+        cartePersonnage.add(prophet);
+        cartePersonnage.add(samurai);
+        cartePersonnage.add(vagabond);
+        cartePersonnage.add(warrior);
+        cartePersonnage.add(wretch);
+
+        carteBestiaire.add(albinauric);
+        carteBestiaire.add(ancetre);
+        carteBestiaire.add(cauchemard);
+        carteBestiaire.add(chat);
+        carteBestiaire.add(crabe);
+        carteBestiaire.add(crystalBleu);
+        carteBestiaire.add(lion);
+        carteBestiaire.add(mobFeu);
+        carteBestiaire.add(mobHache);
+
+        for(Carte carte : toutesCartes){
+            System.out.println(carte.getNom());
+        }
     }
 
 
@@ -362,9 +456,7 @@ public class HelloController implements Initializable {
         moi = c;
         soin = moi.getNbSoin();
         writeRapideInt(lblResteSoin, soin);
-
         writeRapideInt(lblResteSoin, moi.getNbSoin());
-
         arme1.setImage(null);
         arme2.setImage(null);
         arme3.setImage(null);
@@ -413,13 +505,9 @@ public class HelloController implements Initializable {
     public void changeLoup(Event event) {
         changeAp(apInventaire);
         epee.setDispo(true);
-        katana.setDispo(true);
         armes.add(epee);
-        armes.add(katana);
         sortsN.add(epee.getS1());
-        sortsN.add(katana.getS1());
         sortsS.add(epee.getS2());
-        sortsS.add(katana.getS2());
 
         // Mettre a jour les cartes armes et sort pour chaque perso en fonction de sa main
 
@@ -431,9 +519,7 @@ public class HelloController implements Initializable {
     public void changeSamurai(Event event) {
         changeAp(apInventaire);
         katana.setDispo(true);
-        bloodRiver.setDispo(true);
         armes.add(katana);
-        armes.add(bloodRiver);
 
         // Same
 
@@ -446,9 +532,7 @@ public class HelloController implements Initializable {
     public void changeAstrologue(Event event) {
         changeAp(apInventaire);
         baguette.setDispo(true);
-        sceptre.setDispo(true);
         armes.add(baguette);
-        armes.add(sceptre);
 
         // Same
 
@@ -480,8 +564,10 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    public void changeApEnia(Event event) {
-        changeAp(apEnia);
+    public void changeApCollection(Event event) {
+        changeAp(apCollection);
+        majCollection("Personnage");
+
     }
 
 // ------------------------------------------------------------------------------//
@@ -552,8 +638,30 @@ public class HelloController implements Initializable {
     // ---------------------------------------------------------------------------------------------------------------
     // Lance le combat du site selectionné ---------------------------------------------------------------------------
 
+
+    public void ajouterArme(Classe classe ,Arme armeloup, Arme armeronin, Arme armemage){
+        if(classe == loup){
+            armeloup.setDispo(true);
+            armes.add(armeloup);
+            sortsN.add(armeloup.getS1());
+            sortsS.add(armeloup.getS2());
+        } else if (classe == ronin) {
+            armeronin.setDispo(true);
+            armes.add(armeronin);
+            sortsN.add(armeronin.getS1());
+            sortsS.add(armeronin.getS2());
+        } else {
+            armemage.setDispo(true);
+            armes.add(armemage);
+            sortsN.add(armemage.getS1());
+            sortsS.add(armemage.getS2());
+        }
+
+    }
+
     public void majCombat(Boss boss, Classe classe){
         bossActuel = boss;
+        System.out.println(bossActuel);
         changeAp(apCombat);
         changeImageViewImg(imgArene, boss.getArene());
         changeImageViewImg(imgBoss, boss.getImgFace());
@@ -584,16 +692,17 @@ public class HelloController implements Initializable {
             // affiche les site de grace suivant si l'on gagne en fonction des boss tués et attribut des nouvelle stats ainsi qu'une nouvelle arme
             switch(boss){
                 case "Godrick le Greffé" :
+
                     // affiche les site de grace suivant
                     siteRenalla.setVisible(true);
                     siteRadahn.setVisible(true);
-                    // ajoute une nouvelle arme dans l'inventaire
-                    grandEspadon.setDispo(true);
-                    armes.add(grandEspadon);
-                    // augmentation des stats
-                    moi.setPv(moi.getPv()+10);
-                    moi.setForce(moi.getForce()+10);
                     siteGodrick.setDisable(true);
+
+                    // ajoute une nouvelle arme dans l'inventaire en fonction de la classe
+                    ajouterArme(moi, hache, courbe, magicSword);
+
+                    // augmentation des stats
+                    moi.augmenterStat(5);
                     break;
 
                 case "Rennala":
@@ -603,32 +712,56 @@ public class HelloController implements Initializable {
                         siteMorgot.setVisible(true);
                     }
                     siteRenalla.setDisable(true);
+
+                    // ajout de l'armes gagné
+                    ajouterArme(moi, magicSword, magicSword, azurBaguette);
+
+                    // augmentation des stats
+                    moi.augmenterStat(5);
                     break;
+
                 case "Général Radahn":
                     niveauSuffisant+=1;
                     if(niveauSuffisant==2){
                         siteMorgot.setVisible(true);
                     }
                     siteRadahn.setDisable(true);
+                    ajouterArme(moi, espadonRadahn, bloodRiver, codedSword);
+                    moi.augmenterStat(5);
                     break;
+
                 case "Morgot le Roi Déchu":
                     siteMalenia.setVisible(true);
                     siteMaliketh.setVisible(true);
                     siteMorgot.setDisable(true);
+                    ajouterArme(moi, katanamorgot, katanamorgot, sceptre);
+                    moi.augmenterStat(10);
                     break;
+
                 case "Malenia":
                     niveauSuffisant+=1;
                     if (niveauSuffisant == 4){
                         siteFinal.setVisible(true);
                     }
                     siteMalenia.setDisable(true);
+                    ajouterArme(moi, grandEspadon, katanaMalenia, katanaMalenia);
+                    moi.augmenterStat(10);
                     break;
+
                 case "La lame d'ébène":
                     niveauSuffisant+=1;
                     if (niveauSuffisant == 4){
                         siteFinal.setVisible(true);
                     }
                     siteMaliketh.setDisable(true);
+                    ajouterArme(moi, espadonMaliketh, espadonMaliketh, death);
+                    moi.augmenterStat(10);
+                    break;
+
+                case "Godfrey" :
+                    siteFinal.setDisable(true);
+                    ajouterArme(moi, jesus, jesus, jesus);
+                    moi.augmenterStat(10);
                     break;
             }
         } else if(moi.testMort()) {
@@ -643,6 +776,7 @@ public class HelloController implements Initializable {
 
     @FXML
     public void lanceFinal(Event event) {
+        majCombat(godfrey, moi);
     }
 
     @FXML
@@ -686,9 +820,9 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
     public void changeImageViewImg(ImageView imgView, String linkImage){
         imgView.setImage(
                 new Image(
-                        getClass().getResource(
-                                "/images/"+linkImage
-                        ).toExternalForm()
+                        Objects.requireNonNull(getClass().getResource(
+                                "/images/" + linkImage
+                        )).toExternalForm()
                 )
         );
     }
@@ -714,6 +848,7 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
         invisible(apEnia);
         invisible(apMiriel);
         invisible(apCombat);
+        invisible(apCollection);
         imgGG.setVisible(false);
         imgPerdu.setVisible(false);
         paneGG.setVisible(false);
@@ -958,4 +1093,191 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
     public void selectionSort1emp3(Event event) {
         changerSelectionSort1(contenuSortNorm3);
     }
+
+    // Changer les collections
+
+    public void majCollection(String type){
+        carteLeg1.setVisible(false);
+        carteLeg2.setVisible(false);
+        carteRare1.setVisible(false);
+        carteRare2.setVisible(false);
+        carteRare3.setVisible(false);
+        carteCommune1.setVisible(false);
+        carteCommune2.setVisible(false);
+        carteCommune3.setVisible(false);
+        carteCommune4.setVisible(false);
+        carteCommune5.setVisible(false);
+
+        ArrayList<Carte> collectionCarte = new ArrayList<Carte>();
+        for(Carte carte : toutesCartes){
+            if(carte.getType() == type){
+                collectionCarte.add(carte);
+            }
+        }
+
+        for(Carte carte : collectionCarte){
+            if(carte.getRarete()>=90){
+                changeImageViewImg(carteLeg1, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteLeg1.setVisible(true);
+                }
+            } else if (carte.getRarete()>=85 && carte.getRarete()<90) {
+                changeImageViewImg(carteLeg2, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteLeg2.setVisible(true);
+                }
+            }else if (carte.getRarete()>=70 && carte.getRarete()<85) {
+                changeImageViewImg(carteRare1, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteRare1.setVisible(true);
+                }
+            }
+            else if (carte.getRarete()>=65 && carte.getRarete()<70) {
+                changeImageViewImg(carteRare2, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteRare2.setVisible(true);
+                }
+            }
+            else if (carte.getRarete()>=60 && carte.getRarete()<65) {
+                changeImageViewImg(carteRare3, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteRare3.setVisible(true);
+                }
+            }else if (carte.getRarete()>=50 && carte.getRarete()<60) {
+                changeImageViewImg(carteCommune1, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteCommune1.setVisible(true);
+                }
+            }else if (carte.getRarete()>=40 && carte.getRarete()<50) {
+                changeImageViewImg(carteCommune2, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteCommune2.setVisible(true);
+                }
+            }else if (carte.getRarete()>=30 && carte.getRarete()<40) {
+                changeImageViewImg(carteCommune3, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteCommune3.setVisible(true);
+                }
+            }
+            else if (carte.getRarete()>=20 && carte.getRarete()<30) {
+                changeImageViewImg(carteCommune4, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteCommune4.setVisible(true);
+                }
+            }
+            else if (carte.getRarete()>=10 && carte.getRarete()<20) {
+                changeImageViewImg(carteCommune5, carte.getImg());
+                if(carte.isDisponible()) {
+                    carteCommune5.setVisible(true);
+                }
+            }
+        }
+
+    }
+    @FXML
+    public void changeCollectionToBestiaire(Event event) {
+        majCollection("Bestiaire");
+    }
+
+    @FXML
+    public void changeCollectionToPersonnage(Event event) {
+        majCollection("Personnage");
+    }
+
+    @FXML
+    public void changeCollectionToPaysage(Event event) {
+        majCollection("Paysage");
+    }
+
+
+    // Tirage des cartes
+
+    @FXML
+    public void changeApEnia(Event event) {
+        changeAp(apEnia);
+        imgCarteFond.setVisible(false);
+        imgCarteEffet.setVisible(false);
+        imgCarteObjet.setVisible(false);
+        gifAnimationFille.setVisible(false);
+        gifFeuArtifice.setVisible(false);
+        changeImageViewImg(gifCoffre, "Carte/Animation/coffreFerme.png");
+    }
+
+    @FXML
+    public void lanceTirage(Event event) {
+        lanceAnimationCoffre();
+        afficheCarteAleatroire();
+    }
+
+    public void lanceAnimationCoffre(){
+        changeImageViewImg(gifCoffre, "Carte/Animation/coffre.gif");
+        // Crée une Timeline pour contrôler l'animation
+        Timeline timeline = new Timeline();
+
+        // Ajoute un KeyFrame pour définir la durée de l'animation
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> {
+            // Rétablit l'image d'origine après avoir joué une fois le GIF
+            changeImageViewImg(gifCoffre, "Carte/Animation/coffreFerme.png");
+        });
+
+        // Ajoute le KeyFrame à la Timeline
+        timeline.getKeyFrames().add(keyFrame);
+
+        // Lance la Timeline
+        timeline.setCycleCount(1); // La timeline est exécutée une seule fois
+        timeline.play();
+    }
+
+    public static Carte tirerCarte(List<Carte> toutesCartes) {
+
+        Random random = new Random();
+        int randomValue = random.nextInt(100);
+        Carte carteChoisie = null;
+
+        for (Carte carte : toutesCartes) {
+            if (carte.getRarete() >= randomValue && (carteChoisie == null || carte.getRarete() < carteChoisie.getRarete())) {
+                carteChoisie = carte;
+            }
+        }
+
+        if (carteChoisie != null) {
+            carteChoisie.setDisponible(true);
+        }
+        System.out.println(carteChoisie.getNom());
+        return carteChoisie;
+
+    }
+
+    public void afficheCarteAleatroire(){
+        Random r = new Random();
+        int nbListeAlea = r.nextInt(3-1)+1;
+        System.out.println(nbListeAlea);
+        ArrayList<Carte> listeCarte = new ArrayList<>();
+        switch(nbListeAlea){
+            case 1:
+                listeCarte = cartePersonnage;
+                break;
+            case 2 :
+                listeCarte = carteBestiaire;
+                break;
+        }
+        Carte carte = tirerCarte(listeCarte);
+        changeImageViewImg(imgCarteFond, carte.getFond());
+        changeImageViewImg(imgCarteObjet, carte.getImg());
+        imgCarteObjet.setVisible(true);
+        imgCarteFond.setVisible(true);
+        if (carte.getAnimation()=="Legendaire"){
+            gifAnimationFille.setVisible(true);
+            gifFeuArtifice.setVisible(true);
+        }
+        if(carte.getAnimation() == "Rare"){
+            gifFeuArtifice.setVisible(true);
+            gifAnimationFille.setVisible(false);
+        }
+        if(carte.getAnimation() == "Commun"){
+            gifAnimationFille.setVisible(false);
+            gifFeuArtifice.setVisible(false);
+        }
+    }
+
 }

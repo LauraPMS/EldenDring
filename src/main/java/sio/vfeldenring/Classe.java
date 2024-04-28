@@ -21,7 +21,13 @@ public class Classe {
     private ArrayList<Sort> sortsS;
     private int nbSoin;
 
-    public Classe(String nom, String imgPerso,ArrayList<Arme> armes,ArrayList<Sort> sorts, ArrayList<Sort> sortsS, int pv,int pvMax, int defense, int force, int chance, int vitesse, Arme main, int nbSoin) {
+    public Classe(String nom, String imgPerso,
+                  ArrayList<Arme> armes,
+                  ArrayList<Sort> sorts,
+                  ArrayList<Sort> sortsS, int pv,
+                  int pvMax, int defense, int force,
+                  int chance, int vitesse, Arme main,
+                  int nbSoin) {
         this.nom = nom;
         this.pv = pv;
         this.defense = defense;
@@ -193,4 +199,10 @@ public class Classe {
 
 
     public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
+
+
+    public void augmenterStat(int stat){
+        this.pv += stat;
+        this.force += stat;
+    }
 }
