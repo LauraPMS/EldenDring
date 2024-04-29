@@ -453,7 +453,6 @@ public class HelloController implements Initializable {
         writeRapideInt(lblForce, c.getForce());
         writeRapideInt(lblVitesse, c.getVitesse());
         changeImageViewImg(persoView, c.getImgPerso());
-        moi = c;
         soin = moi.getNbSoin();
         writeRapideInt(lblResteSoin, soin);
         writeRapideInt(lblResteSoin, moi.getNbSoin());
@@ -497,7 +496,7 @@ public class HelloController implements Initializable {
                 index++;
             }
         }
-        changerDescEtSortArmes(contenuIcon1);
+        changerDescEtSortArmes(moi.getMain().getNom());
     }
 
 
@@ -505,6 +504,8 @@ public class HelloController implements Initializable {
     public void changeLoup(Event event) {
         changeAp(apInventaire);
         epee.setDispo(true);
+        moi = loup;
+        moi.setMain(epee);
         armes.add(epee);
         sortsN.add(epee.getS1());
         sortsS.add(epee.getS2());
@@ -519,6 +520,8 @@ public class HelloController implements Initializable {
     public void changeSamurai(Event event) {
         changeAp(apInventaire);
         katana.setDispo(true);
+        moi = ronin;
+        moi.setMain(katana);
         armes.add(katana);
 
         // Same
@@ -532,6 +535,8 @@ public class HelloController implements Initializable {
     public void changeAstrologue(Event event) {
         changeAp(apInventaire);
         baguette.setDispo(true);
+        moi = mage;
+        moi.setMain(baguette);
         armes.add(baguette);
 
         // Same
@@ -621,6 +626,7 @@ public class HelloController implements Initializable {
     @FXML
     public void changeArme4(Event event) {
         changerDescEtSortArmes(contenuIcon4);
+
     }
     @FXML
     public void changeArme5(Event event) {
