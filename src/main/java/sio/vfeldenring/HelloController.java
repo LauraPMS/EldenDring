@@ -1235,7 +1235,8 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
         Carte carteChoisie = null;
 
         for (Carte carte : toutesCartes) {
-            if (carte.getRarete() >= randomValue && (carteChoisie == null || carte.getRarete() < carteChoisie.getRarete())) {
+            if (carte.getRarete() >= randomValue && (carteChoisie == null
+                    || carte.getRarete() < carteChoisie.getRarete())) {
                 carteChoisie = carte;
             }
         }
