@@ -127,6 +127,8 @@
                   <Image url="@../../images/Arme/mage/baguette.png" />
                </image>
             </ImageView>
+            <ProgressBar fx:id="ProgXp" layoutX="545.0" layoutY="56.0" prefHeight="20.0" prefWidth="309.0" progress="0.0" />
+            <Label layoutX="481.0" layoutY="58.0" style="-fx-text-fill: white;" text="Xp :" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="apMap" prefHeight="555.0" prefWidth="989.0" style="-fx-background-color: #462e01;" visible="false">
@@ -356,7 +358,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="apEnia" prefHeight="556.0" prefWidth="990.0">
+      <AnchorPane fx:id="apEnia" prefHeight="556.0" prefWidth="990.0" visible="false">
          <children>
             <ImageView fitHeight="598.0" fitWidth="989.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -557,57 +559,62 @@
                         <Image url="@../../images/Carte/Fond/manuscrit.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteLeg1" fitHeight="132.0" fitWidth="122.0" layoutX="56.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteLeg1" fitHeight="132.0" fitWidth="122.0" layoutX="56.0" layoutY="17.0" onMouseClicked="#voirPlusWretch" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/wretch.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteLeg2" fitHeight="132.0" fitWidth="122.0" layoutX="235.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteLeg2" fitHeight="132.0" fitWidth="122.0" layoutX="235.0" layoutY="17.0" onMouseClicked="#voirPlusVagabond" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/vagabond.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteRare1" fitHeight="132.0" fitWidth="122.0" layoutX="425.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteRare1" fitHeight="132.0" fitWidth="122.0" layoutX="425.0" layoutY="17.0" onMouseClicked="#voirPlusHero" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/hero.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteRare2" fitHeight="150.0" fitWidth="105.0" layoutX="587.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteRare2" fitHeight="150.0" fitWidth="105.0" layoutX="587.0" layoutY="8.0" onMouseClicked="#voirPlusSamurai" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/samurai.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteRare3" fitHeight="150.0" fitWidth="105.0" layoutX="781.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteRare3" fitHeight="150.0" fitWidth="105.0" layoutX="781.0" layoutY="10.0" onMouseClicked="#voirPlusConfessor" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/confessor.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteCommune1" fitHeight="150.0" fitWidth="105.0" layoutX="39.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteCommune1" fitHeight="150.0" fitWidth="105.0" layoutX="39.0" layoutY="205.0" onMouseClicked="#voirPlusBandit" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/bandit.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteCommune3" fitHeight="150.0" fitWidth="105.0" layoutX="411.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteCommune3" fitHeight="150.0" fitWidth="105.0" layoutX="411.0" layoutY="205.0" onMouseClicked="#voirPlusPrisonier" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/prisonner.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteCommune2" fitHeight="150.0" fitWidth="105.0" layoutX="221.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteCommune2" fitHeight="150.0" fitWidth="105.0" layoutX="221.0" layoutY="205.0" onMouseClicked="#voirPlusAstrologue" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/astrolog.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteCommune4" fitHeight="150.0" fitWidth="105.0" layoutX="582.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteCommune4" fitHeight="150.0" fitWidth="105.0" layoutX="582.0" layoutY="205.0" onMouseClicked="#voirPlusGuerrier" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/warrior.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="carteCommune5" fitHeight="150.0" fitWidth="105.0" layoutX="772.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="carteCommune5" fitHeight="150.0" fitWidth="105.0" layoutX="772.0" layoutY="205.0" onMouseClicked="#voirPlusProphet" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/Carte/Joueur/prophet.png" />
                      </image>
                   </ImageView>
                </children></Pane>
+            <Pane fx:id="fondSombre" onMouseClicked="#disparition" opacity="0.8" prefHeight="557.0" prefWidth="997.0" style="-fx-background-color: black;" />
+            <ImageView fx:id="imgPersoVp" fitHeight="486.0" fitWidth="248.0" layoutX="93.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Joueur/vagabond.png" />
+               </image></ImageView>
             <ImageView fitHeight="86.0" fitWidth="92.0" layoutX="51.0" layoutY="14.0" onMouseClicked="#changeCollectionToPersonnage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/Carte/Icon/ER_Custom_Menu_Icon_Origins.png" />
@@ -633,6 +640,75 @@
                   <Image url="@../../images/Background/goldenArrow-removebg-preview.png" />
                </image>
             </ImageView>
+            <Label fx:id="lblNomCarte" layoutX="368.0" layoutY="127.0" prefHeight="37.0" prefWidth="105.0" style="-fx-text-fill: white;" text="Vagabond">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPVDisable" layoutX="368.0" layoutY="175.0" style="-fx-text-fill: white;" text="PV :">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="lblAtqDisable" layoutX="366.0" layoutY="224.0" style="-fx-text-fill: white;" text="Attaque : ">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="lblDescriptionDisable" layoutX="366.0" layoutY="270.0" style="-fx-text-fill: white;" text="Description :">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="lblPvCarte" layoutX="407.0" layoutY="177.0" style="-fx-text-fill: white;" text="50" />
+            <Label fx:id="lblAtqCarte" layoutX="441.0" layoutY="225.0" style="-fx-text-fill: white;" text="50" />
+            <Label fx:id="lblDescriptionCarte" layoutX="368.0" layoutY="292.0" prefHeight="75.0" prefWidth="226.0" style="-fx-text-fill: white;" text="Un chevalier exilé de son pays pour errer. Une origine solide et blindée." wrapText="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="apPoint" prefHeight="557.0" prefWidth="991.0">
+         <children>
+            <ImageView fitHeight="557.0" fitWidth="990.0" layoutX="-2.0" layoutY="-1.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Background/fond-collection.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="137.0" fitWidth="137.0" layoutX="145.0" layoutY="104.0" onMouseClicked="#augmenteForce" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Stat/strength.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="147.0" fitWidth="147.0" layoutX="397.0" layoutY="108.0" onMouseClicked="#augmentePv" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Stat/vigor.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="147.0" fitWidth="137.0" layoutX="654.0" layoutY="108.0" onMouseClicked="#augmenteDef" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/Carte/Stat/shield.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="statForce" layoutX="197.0" layoutY="52.0" text="15">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="statPv" layoutX="456.0" layoutY="51.0" text="15">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="statDef" layoutX="707.0" layoutY="53.0" text="15">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="268.0" layoutY="428.0" text="Vous avez         points a dépenser">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="point" layoutX="427.0" layoutY="428.0" text="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

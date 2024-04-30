@@ -3,14 +3,17 @@ package sio.vfeldenring;
 public class Carte {
     private String nom;
     private String effet;
+    private int pv;
+    private int atq;
     private String type;
     private String img;
     private String fond;
     private String animation;
+    private String description;
     private int rarete;
     private boolean disponible;
 
-    public Carte(String type, String nom, String effet, String img, String fond, String animation, int rarete,boolean disponible) {
+    public Carte(String type, String nom, String effet, String img, String fond, String animation, int rarete,boolean disponible, int pv, int atq, String description) {
         this.nom = nom;
         this.type = type;
         this.effet = effet;
@@ -19,13 +22,15 @@ public class Carte {
         this.animation = animation;
         this.rarete = rarete;
         this.disponible = disponible;
+        this.pv = pv;
+        this.atq = atq;
     }
 
     public Carte(String type, String nom,
                  String img, String fond,
                  String animation,
                  int rarete,
-                 boolean disponible) {
+                 boolean disponible, int pv, int atq, String description) {
         this.nom = nom;
         this.type = type;
         this.img = img;
@@ -33,10 +38,37 @@ public class Carte {
         this.animation = animation;
         this.rarete = rarete;
         this.disponible = disponible;
+        this.pv = pv;
+        this.atq = atq;
+        this.description = description;
+    }
+
+    public int getPv() {
+        return pv;
+    }
+
+    public void setPv(int pv) {
+        this.pv = pv;
+    }
+
+    public int getAtq() {
+        return atq;
+    }
+
+    public void setAtq(int atq) {
+        this.atq = atq;
     }
 
     public String getType() {
         return type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setType(String type) {
@@ -98,5 +130,6 @@ public class Carte {
     public void setRarete(int rarete) {
         this.rarete = rarete;
     }
+
 }
 

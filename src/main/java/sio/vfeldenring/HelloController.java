@@ -225,9 +225,9 @@ public class HelloController implements Initializable {
 
 // Création des classes de personnage
 
-    public Classe loup = new Classe("Loup", "Armure/luiLoup.png", armes, sortsN,sortsS, 200,200,12, 16,6, 12, katana,5);
-    public Classe ronin = new Classe("Ronin","Armure/luiRonin.png", armes, sortsN,sortsS,  150, 150,13, 12, 8, 13, katana,5);
-    public Classe mage = new Classe("Mage", "Armure/luiMage.png", armes, sortsN,sortsS, 100,100, 7, 8, 10, 15,baguette,5);
+    public Classe loup = new Classe("Loup", "Armure/luiLoup.png", armes, sortsN,sortsS, 200,200,12, 16,6, 12, katana,5,0,5,0,false);
+    public Classe ronin = new Classe("Ronin","Armure/luiRonin.png", armes, sortsN,sortsS,  150, 150,13, 12, 8, 13, katana,5,0,5,0,false);
+    public Classe mage = new Classe("Mage", "Armure/luiMage.png", armes, sortsN,sortsS, 100,100, 7, 8, 10, 15,baguette,5,0,5,0,false);
 
 
 // Création des Boss
@@ -243,27 +243,27 @@ public class HelloController implements Initializable {
 
 // Création des cartes
         // Personnage
-    public Carte astrologue = new Carte("Personnage", "Astrologue","Carte/Joueur/astrolog.png", "Carte/Fond/manuscrit.png","Commun",10, false);
-    public Carte bandit = new Carte("Personnage", "Bandit", "Carte/Joueur/bandit.png", "Carte/Fond/manuscrit.png", "Commun", 20, false);
-    public Carte confessor = new Carte("Personnage", "Confessor", "Carte/Joueur/confessor.png", "Carte/Fond/sombre.png", "Rare", 64, false);
-    public Carte hero = new Carte("Personnage", "Hero", "Carte/Joueur/hero.png", "Carte/Fond/manuscrit.png", "Commun", 30, false);
-    public Carte prisonnier = new Carte("Personnage", "Prisonnier", "Carte/Joueur/prisonner.png", "Carte/Fond/manuscrit.png", "Commun", 40, false);
-    public Carte prophet = new Carte("Personnage", "Prophete", "Carte/Joueur/prophet.png", "Carte/Fond/manuscrit.png", "Commun", 50, false);
-    public Carte samurai = new Carte("Personnage", "Samurai", "Carte/Joueur/samurai.png", "Carte/Fond/sombre.png", "Rare", 79, false);
-    public Carte vagabond = new Carte("Personnage", "Vagabond", "Carte/Joueur/vagabond.png", "Carte/Fond/legendaire.png", "Legendaire", 88, false);
-    public Carte warrior = new Carte("Personnage", "Warrior", "Carte/Joueur/warrior.png", "Carte/Fond/sombre.png", "Rare", 66, false);
-    public Carte wretch = new Carte("Personnage", "Wretch", "Carte/Joueur/wretch.png", "Carte/Fond/legendaire.png", "Legendaire", 99, false);
+    public Carte astrologue = new Carte("Personnage", "Astrologue","Carte/Joueur/astrolog.png", "Carte/Fond/manuscrit.png","Commun",10, false, 150, 25,"A scholar who reads fate in the stars. Heir to the school of glintstone sorcery.");
+    public Carte bandit = new Carte("Personnage", "Bandit", "Carte/Joueur/bandit.png", "Carte/Fond/manuscrit.png", "Commun", 20, false,150, 25,"A dangerous bandit who strikes for weak points. Excels at ranged combat with bows.");
+    public Carte confessor = new Carte("Personnage", "Confessor", "Carte/Joueur/confessor.png", "Carte/Fond/sombre.png", "Rare", 64, false,150, 25,"A church spy adept at covert operations. Equally adept with a sword as they are with their incantations.");
+    public Carte hero = new Carte("Personnage", "Hero", "Carte/Joueur/hero.png", "Carte/Fond/manuscrit.png", "Commun", 30, false,150, 25,"A stalwart hero, at home with a battleaxe, descended from a badlands chieftain.");
+    public Carte prisonnier = new Carte("Personnage", "Prisonnier", "Carte/Joueur/prisonner.png", "Carte/Fond/manuscrit.png", "Commun", 40, false,150, 25,"A prisoner bound in an iron mask. Studied in glintstone sorcery, having lived among the elite prior to sentencing.");
+    public Carte prophet = new Carte("Personnage", "Prophete", "Carte/Joueur/prophet.png", "Carte/Fond/manuscrit.png", "Commun", 50, false,150, 25,"A seer ostracized for inauspicious prophecies. Well-versed in healing incantations.");
+    public Carte samurai = new Carte("Personnage", "Samurai", "Carte/Joueur/samurai.png", "Carte/Fond/sombre.png", "Rare", 79, false,150, 25,"A capable fighter from the distant Land of Reeds. Handy with katana and longbows.");
+    public Carte vagabond = new Carte("Personnage", "Vagabond", "Carte/Joueur/vagabond.png", "Carte/Fond/legendaire.png", "Legendaire", 88, false,150, 25,"A knight exiled from their homeland to wander. A solid, armor-clad origin.");
+    public Carte warrior = new Carte("Personnage", "Warrior", "Carte/Joueur/warrior.png", "Carte/Fond/sombre.png", "Rare", 66, false,150, 25, "A nomad warrior who fights wielding two blades at once. An origin of exceptional technique.");
+    public Carte wretch = new Carte("Personnage", "Wretch", "Carte/Joueur/wretch.png", "Carte/Fond/legendaire.png", "Legendaire", 99, false,150, 25,"A poor, purposeless sod, naked as the day they were born. A nice club is all they have.");
 
         // Bestiaire
-    public Carte albinauric = new Carte("Bestiaire", "Albinauric", "Carte/Bestiaire/albinoric.png", "Carte/Fond/legendaire.png", "Legendaire", 99, false);
-    public Carte ancetre = new Carte("Bestiaire", "Ancetre", "Carte/Bestiaire/ancetre.png", "Carte/Fond/legendaire.png", "Legendaire", 88, false);
-    public Carte cauchemard = new Carte("Bestiaire", "CauchemarDs3", "Carte/Bestiaire/cauchemarDS3.png", "Carte/Fond/sombre.png", "Rare", 79, false);
-    public Carte crabe = new Carte("Bestiaire", "Crabe", "Carte/Bestiaire/crab.png", "Carte/Fond/sombre.png", "Rare", 66, false);
-    public Carte crystalBleu = new Carte("Bestiaire", "Bleu", "Carte/Bestiaire/CrystalBleu.png", "Carte/Fond/sombre.png", "Rare", 64, false);
-    public Carte lion = new Carte("Bestiaire", "Lion", "Carte/Bestiaire/lion.png", "Carte/Fond/manuscrit.png", "Commun", 50, false);
-    public Carte chat = new Carte("Bestiaire", "Chat", "Carte/Bestiaire/chat.png", "Carte/Fond/manuscrit.png", "Commun", 40, false);
-    public Carte mobHache = new Carte("Bestiaire", "Mob Hache", "Carte/Bestiaire/mobHache.png", "Carte/Fond/manuscrit.png", "Commun", 30, false);
-    public Carte mobFeu = new Carte("Bestiaire", "Mob Feu", "Carte/Bestiaire/mobFeu.png", "Carte/Fond/manuscrit.png", "Commun", 20, false);
+    public Carte albinauric = new Carte("Bestiaire", "Albinauric", "Carte/Bestiaire/albinoric.png", "Carte/Fond/legendaire.png", "Legendaire", 99, false,150, 25,"");
+    public Carte ancetre = new Carte("Bestiaire", "Ancetre", "Carte/Bestiaire/ancetre.png", "Carte/Fond/legendaire.png", "Legendaire", 88, false,150, 25,"");
+    public Carte cauchemard = new Carte("Bestiaire", "CauchemarDs3", "Carte/Bestiaire/cauchemarDS3.png", "Carte/Fond/sombre.png", "Rare", 79, false,150, 25,"");
+    public Carte crabe = new Carte("Bestiaire", "Crabe", "Carte/Bestiaire/crab.png", "Carte/Fond/sombre.png", "Rare", 66, false,150, 25,"");
+    public Carte crystalBleu = new Carte("Bestiaire", "Bleu", "Carte/Bestiaire/CrystalBleu.png", "Carte/Fond/sombre.png", "Rare", 64, false,150, 25,"");
+    public Carte lion = new Carte("Bestiaire", "Lion", "Carte/Bestiaire/lion.png", "Carte/Fond/manuscrit.png", "Commun", 50, false,150, 25,"");
+    public Carte chat = new Carte("Bestiaire", "Chat", "Carte/Bestiaire/chat.png", "Carte/Fond/manuscrit.png", "Commun", 40, false,150, 25,"");
+    public Carte mobHache = new Carte("Bestiaire", "Mob Hache", "Carte/Bestiaire/mobHache.png", "Carte/Fond/manuscrit.png", "Commun", 30, false,150, 25,"");
+    public Carte mobFeu = new Carte("Bestiaire", "Mob Feu", "Carte/Bestiaire/mobFeu.png", "Carte/Fond/manuscrit.png", "Commun", 20, false,150, 25,"");
 
         // Sort
     //...
@@ -366,11 +366,51 @@ public class HelloController implements Initializable {
 
     private ArrayList<Carte> cartePersonnage = new ArrayList<Carte>();
     private ArrayList<Carte> carteBestiaire = new ArrayList<Carte>();
+    @FXML
+    private Label lblPvCarte;
+    @FXML
+    private ImageView imgPersoVp;
+    @FXML
+    private Label lblPVDisable;
+    @FXML
+    private Label lblDescriptionDisable;
+    @FXML
+    private Label lblAtqDisable;
+    @FXML
+    private Label lblNomCarte;
+    @FXML
+    private Pane fondSombre;
+    @FXML
+    private Label lblDescriptionCarte;
+    @FXML
+    private Label lblAtqCarte;
+    @FXML
+    private ProgressBar ProgXp;
+    @FXML
+    private Label statPv;
+    @FXML
+    private Label point;
+    @FXML
+    private Label statForce;
+    @FXML
+    private Label statDef;
+    @FXML
+    private AnchorPane apPoint;
 
     // Fonction du debut rend tout invisible met a jour l'ap visible et rempli la liste des cartes disponible pour le tirage
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         clearAll();
+        fondSombre.setVisible(false);
+        imgPersoVp.setVisible(false);
+        lblNomCarte.setVisible(false);
+        lblPVDisable.setVisible(false);
+        lblAtqDisable.setVisible(false);
+        lblPVDisable.setVisible(false);
+        lblAtqCarte.setVisible(false);
+        lblPvCarte.setVisible(false);
+        lblDescriptionCarte.setVisible(false);
+        lblDescriptionDisable.setVisible(false);
 
         siteFinal.setVisible(false);
         siteMaliketh.setVisible(false);
@@ -453,6 +493,7 @@ public class HelloController implements Initializable {
         writeRapideInt(lblForce, c.getForce());
         writeRapideInt(lblVitesse, c.getVitesse());
         changeImageViewImg(persoView, c.getImgPerso());
+        ProgXp.setProgress((float)c.getXp()/100);
         soin = moi.getNbSoin();
         writeRapideInt(lblResteSoin, soin);
         writeRapideInt(lblResteSoin, moi.getNbSoin());
@@ -686,15 +727,20 @@ public class HelloController implements Initializable {
         pvBoss.setProgress(1);
 
     }
+
+    private int recompense = 0;
     public void majPV(Boss b, Classe c){
         double nvPvBoos = b.getPv()/b.getPvMax();
         pvBoss.setProgress(nvPvBoos);
         double nvPvMoi = c.getPv()/c.getPvMax();
         pvMoi.setProgress(nvPvMoi);
+
         if(bossActuel.testMort()){
             paneGG.setVisible(true);
             imgGG.setVisible((true));
             String boss = bossActuel.getNom();
+
+
             // affiche les site de grace suivant si l'on gagne en fonction des boss tués et attribut des nouvelle stats ainsi qu'une nouvelle arme
             switch(boss){
                 case "Godrick le Greffé" :
@@ -702,13 +748,20 @@ public class HelloController implements Initializable {
                     // affiche les site de grace suivant
                     siteRenalla.setVisible(true);
                     siteRadahn.setVisible(true);
-                    siteGodrick.setDisable(true);
 
                     // ajoute une nouvelle arme dans l'inventaire en fonction de la classe
-                    ajouterArme(moi, hache, courbe, magicSword);
+                    if (recompense<1){
+                        recompense += 1;
+                        ajouterArme(moi, hache, courbe, magicSword);
+                    }
 
+                    moi.setTirage(moi.getTirage()+5);
                     // augmentation des stats
-                    moi.augmenterStat(5);
+                    moi.augmenterXp(25);
+                    if(c.isXpAugm()){
+                        changeAp(apPoint);
+                        c.setXpAugm(false);
+                    }
                     break;
 
                 case "Rennala":
@@ -717,13 +770,20 @@ public class HelloController implements Initializable {
                     if (niveauSuffisant == 2){
                         siteMorgot.setVisible(true);
                     }
-                    siteRenalla.setDisable(true);
 
                     // ajout de l'armes gagné
-                    ajouterArme(moi, magicSword, magicSword, azurBaguette);
+                    if (recompense<2){
+                        recompense += 1;
+                        ajouterArme(moi, magicSword, magicSword, azurBaguette);
+                    }
 
+                    moi.setTirage(moi.getTirage()+5);
                     // augmentation des stats
-                    moi.augmenterStat(5);
+                    moi.augmenterXp(20);
+                    if(c.isXpAugm()){
+                        changeAp(apPoint);
+                        c.setXpAugm(false);
+                    }
                     break;
 
                 case "Général Radahn":
@@ -731,17 +791,32 @@ public class HelloController implements Initializable {
                     if(niveauSuffisant==2){
                         siteMorgot.setVisible(true);
                     }
-                    siteRadahn.setDisable(true);
-                    ajouterArme(moi, espadonRadahn, bloodRiver, codedSword);
-                    moi.augmenterStat(5);
+                    moi.setTirage(moi.getTirage()+5);
+                    if (recompense<3){
+                        recompense += 1;
+                        ajouterArme(moi, espadonRadahn, bloodRiver, codedSword);
+                    }
+                    moi.setTirage(moi.getTirage()+5);
+                    moi.augmenterXp(20);
+                    if(c.isXpAugm()){
+                        changeAp(apPoint);
+                        c.setXpAugm(false);
+                    }
                     break;
 
                 case "Morgot le Roi Déchu":
                     siteMalenia.setVisible(true);
                     siteMaliketh.setVisible(true);
-                    siteMorgot.setDisable(true);
-                    ajouterArme(moi, katanamorgot, katanamorgot, sceptre);
-                    moi.augmenterStat(10);
+                    if (recompense<3){
+                        recompense += 1;
+                        ajouterArme(moi, katanamorgot, katanamorgot, sceptre);
+                    }
+                    moi.setTirage(moi.getTirage()+5);
+                    moi.augmenterXp(40);
+                    if(c.isXpAugm()){
+                        changeAp(apPoint);
+                        c.setXpAugm(false);
+                    }
                     break;
 
                 case "Malenia":
@@ -749,9 +824,16 @@ public class HelloController implements Initializable {
                     if (niveauSuffisant == 4){
                         siteFinal.setVisible(true);
                     }
-                    siteMalenia.setDisable(true);
-                    ajouterArme(moi, grandEspadon, katanaMalenia, katanaMalenia);
-                    moi.augmenterStat(10);
+                    if (recompense<3){
+                        recompense += 1;
+                        ajouterArme(moi, grandEspadon, katanaMalenia, katanaMalenia);
+                    }
+                    moi.setTirage(moi.getTirage()+5);
+                    moi.augmenterXp(40);
+                    if(c.isXpAugm()){
+                        changeAp(apPoint);
+                        c.setXpAugm(false);
+                    }
                     break;
 
                 case "La lame d'ébène":
@@ -759,15 +841,29 @@ public class HelloController implements Initializable {
                     if (niveauSuffisant == 4){
                         siteFinal.setVisible(true);
                     }
-                    siteMaliketh.setDisable(true);
-                    ajouterArme(moi, espadonMaliketh, espadonMaliketh, death);
-                    moi.augmenterStat(10);
+                    if (recompense<3){
+                        recompense += 1;
+                        ajouterArme(moi, espadonMaliketh, espadonMaliketh, death);
+                    }
+                    moi.setTirage(moi.getTirage()+5);
+                    moi.augmenterStat(40);
+                    if(c.isXpAugm()){
+                        changeAp(apPoint);
+                        c.setXpAugm(false);
+                    }
                     break;
 
                 case "Godfrey" :
-                    siteFinal.setDisable(true);
-                    ajouterArme(moi, jesus, jesus, jesus);
-                    moi.augmenterStat(10);
+                    if (recompense<3){
+                        recompense += 1;
+                        ajouterArme(moi, jesus, jesus, jesus);
+                    }
+                    moi.setTirage(moi.getTirage()+5);
+                    moi.augmenterStat(100);
+                    if(c.isXpAugm()){
+                        changeAp(apPoint);
+                        c.setXpAugm(false);
+                    }
                     break;
             }
         } else if(moi.testMort()) {
@@ -855,6 +951,7 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
         invisible(apMiriel);
         invisible(apCombat);
         invisible(apCollection);
+        invisible(apPoint);
         imgGG.setVisible(false);
         imgPerdu.setVisible(false);
         paneGG.setVisible(false);
@@ -893,7 +990,7 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
             changeImageViewImg(iconSoin, "Item/soinVide.png");
         }
         else{
-            moi.setPv(moi.getPv()+25);
+            moi.setPv(moi.getPv()+50);
             writeRapideInt(lblResteSoin, soin);
         }
         bossActuel.randomAttaque(moi);
@@ -1211,8 +1308,14 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
 
     @FXML
     public void lanceTirage(Event event) {
-        lanceAnimationCoffre();
-        afficheCarteAleatroire();
+        if(moi.getTirage()>0){
+            lanceAnimationCoffre();
+            afficheCarteAleatroire();
+            moi.setTirage(moi.getTirage()-1);
+            if(moi.getTirage()<0){
+                moi.setTirage(0);
+            }
+        }
     }
 
     public void lanceAnimationCoffre(){
@@ -1287,4 +1390,132 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
         }
     }
 
+
+
+
+    // cliquer sur un personnage "dans le grimoire" doit permettre d'avoir plus d'info.
+    public int nbClick = 0;
+    public void voirPlus(Carte carte){
+        if (carte.isDisponible()){
+            fondSombre.setVisible(true);
+            lblNomCarte.setVisible(true);
+            lblPVDisable.setVisible(true);
+            lblAtqDisable.setVisible(true);
+            lblPVDisable.setVisible(true);
+            lblAtqCarte.setVisible(true);
+            lblPvCarte.setVisible(true);
+            imgPersoVp.setVisible(true);
+            lblDescriptionCarte.setVisible(true);
+            lblDescriptionDisable.setVisible(true);
+            lblNomCarte.setText(carte.getNom());
+            lblDescriptionCarte.setText(carte.getDescription());
+            writeRapideInt(lblAtqCarte, carte.getAtq());
+            writeRapideInt(lblPvCarte, carte.getPv());
+            changeImageViewImg(imgPersoVp, carte.getImg());
+        }
+    }
+
+    @FXML
+    public void voirPlusAstrologue(Event event) {
+        voirPlus(prisonnier);
+    }
+
+    @FXML
+    public void voirPlusSamurai(Event event) {
+        voirPlus(warrior);
+    }
+
+    @FXML
+    public void voirPlusConfessor(Event event) {
+        voirPlus(confessor);
+    }
+
+    @FXML
+    public void voirPlusProphet(Event event) {
+        voirPlus(astrologue);
+    }
+
+    @FXML
+    public void voirPlusBandit(Event event) {
+        voirPlus(prophet);
+    }
+
+    @FXML
+    public void voirPlusVagabond(Event event) {
+        voirPlus(vagabond);
+    }
+
+    @FXML
+    public void voirPlusPrisonier(Event event) {
+        voirPlus(hero);
+    }
+
+    @FXML
+    public void voirPlusHero(Event event) {
+        voirPlus(samurai);
+    }
+
+    @FXML
+    public void voirPlusGuerrier(Event event) {
+        voirPlus(bandit);
+    }
+
+    @FXML
+    public void voirPlusWretch(Event event) {
+        voirPlus(wretch);
+    }
+
+    @FXML
+    public void disparition(Event event) {
+        nbClick+=1;
+        if (nbClick == 2){
+            fondSombre.setVisible(false);
+            imgPersoVp.setVisible(false);
+            lblNomCarte.setVisible(false);
+            lblPVDisable.setVisible(false);
+            lblAtqDisable.setVisible(false);
+            lblPVDisable.setVisible(false);
+            lblAtqCarte.setVisible(false);
+            lblPvCarte.setVisible(false);
+            lblDescriptionCarte.setVisible(false);
+            lblDescriptionDisable.setVisible(false);
+            nbClick = 0;
+        }
+    }
+
+
+
+
+    @FXML
+    public void augmentePv(Event event) {
+        if(moi.getPoint()>0){
+            moi.setPvMax(moi.getPvMax()+5);
+            moi.setPoint(moi.getPoint()-1);
+        }else {
+            changeAp(apInventaire);
+        }
+    }
+
+    @FXML
+    public void augmenteDef(Event event) {
+        if(moi.getPoint()>0){
+            moi.setDefense(moi.getDefense()+5);
+            moi.setPoint(moi.getPoint()-1);
+        }
+        else {
+            changeAp(apInventaire);
+        }
+    }
+
+    @FXML
+    public void augmenteForce(Event event) {
+        if(moi.getPoint()>0){
+            moi.setForce(moi.getForce()+5);
+            moi.setPoint(moi.getPoint()-1);
+        }
+        else{
+            changeAp(apInventaire);
+        }
+
+    }
 }

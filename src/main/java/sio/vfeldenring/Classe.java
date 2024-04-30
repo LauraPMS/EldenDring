@@ -20,6 +20,10 @@ public class Classe {
     private ArrayList<Sort> sortsN;
     private ArrayList<Sort> sortsS;
     private int nbSoin;
+    private int xp;
+    private int tirage;
+    private int point;
+    private boolean xpAugm;
 
     public Classe(String nom, String imgPerso,
                   ArrayList<Arme> armes,
@@ -27,7 +31,7 @@ public class Classe {
                   ArrayList<Sort> sortsS, int pv,
                   int pvMax, int defense, int force,
                   int chance, int vitesse, Arme main,
-                  int nbSoin) {
+                  int nbSoin, int xp, int tirage, int point, boolean xpAugm) {
         this.nom = nom;
         this.pv = pv;
         this.defense = defense;
@@ -41,6 +45,50 @@ public class Classe {
         this.imgPerso = imgPerso;
         this.nbSoin=nbSoin;
         this.pvMax = pvMax;
+        this.xp = xp;
+        this.tirage = tirage;
+        this.point = point;
+        this.xpAugm = xpAugm;
+    }
+
+    public boolean isXpAugm() {
+        return xpAugm;
+    }
+
+    public void setXpAugm(boolean xpAugm) {
+        this.xpAugm = xpAugm;
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
+    public int getTirage() {
+        return tirage;
+    }
+
+    public void setTirage(int tirage) {
+        this.tirage = tirage;
+    }
+
+    public void setSortsN(ArrayList<Sort> sortsN) {
+        this.sortsN = sortsN;
+    }
+
+    public void setSortsS(ArrayList<Sort> sortsS) {
+        this.sortsS = sortsS;
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
     }
 
     public ArrayList<Sort> getSortsN() {
@@ -204,5 +252,18 @@ public class Classe {
     public void augmenterStat(int stat){
         this.pv += stat;
         this.force += stat;
+        this.pvMax = this.pv;
+    }
+
+    public void augmenterXp(int nb){
+        this.xp += nb;
+        this.fullPV();
+        if(this.xp >= 100){
+            augmenterStat(15);
+            this.xp = nb%100;
+            this.tirage += 10;
+            this.point =5;
+            this.xpAugm = true;
+        }
     }
 }
