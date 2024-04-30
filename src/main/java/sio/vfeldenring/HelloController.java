@@ -1485,12 +1485,20 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
 
 
 
+    public void majStat(){
+        writeRapideInt(statPv, moi.getPv());
+        writeRapideInt(statDef, moi.getDefense());
+        writeRapideInt(statForce, moi.getForce());
+        writeRapideInt(point, moi.getPoint());
+    }
 
     @FXML
     public void augmentePv(Event event) {
+        majStat();
         if(moi.getPoint()>0){
             moi.setPvMax(moi.getPvMax()+5);
             moi.setPoint(moi.getPoint()-1);
+            majStat();
         }else {
             changeAp(apInventaire);
         }
@@ -1498,9 +1506,11 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
 
     @FXML
     public void augmenteDef(Event event) {
+        majStat();
         if(moi.getPoint()>0){
             moi.setDefense(moi.getDefense()+5);
             moi.setPoint(moi.getPoint()-1);
+            majStat();
         }
         else {
             changeAp(apInventaire);
@@ -1509,9 +1519,11 @@ public int alea() { return (int)(Math.random() * 101 ); } // 0 to 100
 
     @FXML
     public void augmenteForce(Event event) {
+        majStat();
         if(moi.getPoint()>0){
             moi.setForce(moi.getForce()+5);
             moi.setPoint(moi.getPoint()-1);
+            majStat();
         }
         else{
             changeAp(apInventaire);
